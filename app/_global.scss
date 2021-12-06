@@ -1,0 +1,315 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+
+    @media screen and (max-width: 1023px) {
+        font-size: 0.9rem;
+        
+    }
+
+}
+
+h1 {
+    font-size: 2.5rem;
+    margin-bottom: 2rem;
+
+    @media screen and (max-width: 1023px) {
+        text-align: center;
+        
+    }
+
+    @media screen and (min-width: 1024px) {
+        margin-bottom: 4rem;
+    }
+}
+
+.wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100vh;
+    font-family: 'Kumbh Sans', sans-serif;
+    font-size: $font-normal;
+    color:$veryDarkDesaturatedBlue;
+    font-weight: 400;
+    background-image: linear-gradient($softViolet, $softBlue);
+}
+
+.acc-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+    width: 75%;
+    max-width: 70rem; //1000px
+    min-width: 20.625rem; //330px
+    background-color: white;
+    border-radius: 2rem;
+    -webkit-box-shadow: 0px 8px 20px 0px rgba(0,0,0,0.60); 
+    box-shadow: 0px 8px 20px 0px rgba(0,0,0,0.60);
+
+    @media screen and (min-width: 1024px) {
+        flex-direction: row;
+        height: 65%;
+    }
+
+    @media screen and (max-width: 1023px) {
+        overflow: visible;
+
+    }
+}
+
+.accordion {
+
+    @media screen and (max-width: 767px) {
+        margin: 0 1.2rem 2rem 1.2rem;
+    }
+
+    @media screen and (min-width: 768px) and (max-width: 1023px) {
+        margin: 0 1.5rem 2.5rem 1.5rem;
+    }
+
+    @media screen and (min-width: 1024px) and (max-width: 1199px) {
+        padding: 0 2rem 0 2rem;
+        width: 37.5rem; 
+    }
+
+    @media screen and (min-width: 1200px) {
+        padding: 0 2rem 0 2rem;
+        width: 26.25rem;
+    }
+}
+
+.box-img {
+    position: absolute;
+    z-index: 3;
+    top: 47%;
+    left: 16%;
+
+    @media screen and (max-width: 1023px) {
+        display: none;
+    }
+    
+    @media screen and (min-width: 1024px) and (max-width: 1199px) {
+        left: 7%;
+        width: 14%;
+        height: auto;
+    }
+
+    @media screen and (min-width: 1200px) and (max-width: 1679px) {
+        left: 4%;
+    }
+
+    @media screen and (min-width: 1680px) and (max-width: 1919px) {
+        left: 11%;
+    }
+}
+
+.acc-item {
+    margin: 0 0.5rem 1rem 0.5rem;
+}
+
+.acc-item-header {
+    font-size: 1rem;
+    font-weight: 400;
+    margin-bottom: 1.5rem;
+
+    @media screen and (min-width: 768px) and (max-width: 1023px) {
+        font-size: 1.1rem;
+        
+    }
+}
+
+.acc-item-header.active {
+    font-weight: 700;
+}
+
+.acc-item-header::after {
+    content: "";
+    background-image: url(/images/icon-arrow-down.svg);
+    font-size: 2rem;
+    position: absolute;
+    right: 8rem;
+    width: 1rem;
+    height: 1rem;
+    background-repeat: no-repeat;
+    transition: transform 150ms ease-in-out;
+
+    @media screen and (max-width: 767px) {
+        right: 1.2rem;
+    }
+
+    @media screen and (min-width: 768px) and (max-width: 1023px) {
+        right: 2rem;
+    }
+
+    @media screen and (min-width: 1024px) and (max-width: 1199px) {
+        right: 2rem;
+    }
+
+    @media screen and (min-width: 1200px) and (max-width: 1439px) {
+        right: 3rem;
+    }
+
+    @media screen and (min-width: 1440px) and (max-width: 1679px) {
+        right: 8rem;
+    }
+}
+
+
+.acc-item-header.active::after {
+    transform: rotate(180deg);
+}
+
+.acc-item-header:hover {
+
+    @media screen and (min-width: 1024px) {
+        color: $softRed;
+        cursor:pointer;
+    }
+
+}
+
+.acc-item-body {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 200ms ease-in-out;
+    border-bottom: 1px solid $lightGrayishBlue;
+}
+
+.acc-item-body-content {
+    line-height: 1.5;
+    padding-bottom: 1rem;
+}
+
+.acc-illustration {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    @media screen and (max-width: 1023px) {
+        display: block;
+    }
+
+    @media screen and (max-width: 767px) {
+        max-height: 8.75rem;
+        
+    }
+
+    @media screen and (min-width: 768px) and (max-width: 1023px) {
+        max-height: 10.625rem;
+    }
+
+    @media screen and (min-width: 1024px) {
+        width: 53.5%;
+    }
+}
+
+.acc-illustration::after {
+    content: "";
+    position: absolute;
+    background-image: url(/images/bg-pattern-desktop.svg);
+    background-size: cover;
+    width: 100%;
+    height: auto;
+    top: -15.625rem;
+    left: -37.5rem;
+    display: block;
+    z-index: 1;
+
+
+    @media screen and (max-width: 1023px) {
+        background-image: url(/images/bg-pattern-mobile.svg);
+        background-size: contain;
+        background-repeat: no-repeat;
+    }
+
+    @media screen and (max-width: 767px) {
+        width: 85%;
+        height: 25%;
+        top: 0.2rem;
+        left: 1.8rem
+    }
+
+    @media screen and (min-width: 768px) and (max-width: 1023px) {
+        width: 52%;
+        height: 30%;
+        top: 0.688rem;
+        left: 10rem;
+    }
+
+    @media screen and (min-width: 1024px) and (max-width: 1199px) {
+        width: 120%;
+        height: 130%;
+        top: -12.625rem;
+        left: -38.687rem;
+    }
+
+    @media screen and (min-width: 1200px) and (max-width: 1439px) {
+        width: 124%;
+        height: 165%;
+        top: -19.625rem;
+        left: -47rem;
+    }
+
+    @media screen and (min-width: 1440px) and (max-width: 1679px) {
+        width: 125%;
+        height: 170%;
+        top: -23.625rem;
+        left: -51.5rem;
+    }
+
+    @media screen and (min-width: 1680px) {
+        width: 119%;
+        height: 180%;
+        top: -23.625rem;
+        left: -51.5rem;
+    }
+}
+
+.illustration {
+    position: relative;
+    width: 115%;
+    height: 100%;
+    left: -5.4375rem;
+    z-index: 2;
+
+    @media screen and (min-width: 1024px) and (max-width: 1199px) {
+        left: -1.1875rem;
+    }
+    
+    @media screen and (min-width: 1200px) {
+        left: -6rem;
+    }
+}
+
+.img-desktop {
+
+    @media screen and (max-width: 1023px) {
+        display: none;
+        
+    }
+}
+
+.img-mobile {
+
+    width: 108%;
+    height: auto;
+    top: -7.3125rem;
+    left: -1.625rem;
+
+    @media screen and (min-width: 768px) and (max-width: 1023px) {
+        width: 130%;
+        top: -8.8125rem;
+        left: -3.8125rem;
+        
+    }
+
+    @media screen and (min-width: 1023px) {
+        display: none;
+        
+    }
+}
